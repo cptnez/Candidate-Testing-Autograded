@@ -23,22 +23,17 @@ candidateName = input.question("What is your name?: ");
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-console.log(questions[0])
-candidateAnswers = input.question();
-console.log(questions[1])
-candidateAnswers = input.question();
-console.log(questions[2])
-candidateAnswers = input.question();
-console.log(questions[3])
-candidateAnswers = input.question();
-console.log(questions[4])
-candidateAnswers = input.question();
+candidateAnswers[0] = input.question(questions[0]);
+candidateAnswers[1] = input.question(questions[1]);
+candidateAnswers[2] = input.question(questions[2]);
+candidateAnswers[3] = input.question(questions[3]);
+candidateAnswers[4] = input.question(questions[4]);
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswers == correctAnswer) {
+if (candidateAnswers === correctAnswers) {
   console.log("Correct!")
 } else {
   console.log("Wrong!");
@@ -56,6 +51,7 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
    console.log("Greetings " + candidateName + "! ");
   askQuestion();
+  console.log(candidateAnswers);
   gradeQuiz(this.candidateAnswers);
 }
 
