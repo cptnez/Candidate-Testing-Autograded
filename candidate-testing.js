@@ -7,12 +7,12 @@ let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
-let candidateAnswer = "";
+let candidateAnswer = [];
 
 
 //TODO: Variables for Part 2
 let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? " ];
-let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3" ];
+let correctAnswers =  ["Sally Ride", "true", "40", "Trajectory", "3" ];
 let candidateAnswers = [];
 
 
@@ -23,22 +23,46 @@ candidateName = input.question("What is your name?: ");
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-candidateAnswers[0] = input.question(questions[0]);
-candidateAnswers[1] = input.question(questions[1]);
-candidateAnswers[2] = input.question(questions[2]);
-candidateAnswers[3] = input.question(questions[3]);
-candidateAnswers[4] = input.question(questions[4]);
+  candidateAnswers[0] = input.question(questions[0]);
+  candidateAnswers[1] = input.question(questions[1]);
+  candidateAnswers[2] = input.question(questions[2]);
+  candidateAnswers[3] = input.question(questions[3]);
+  candidateAnswers[4] = input.question(questions[4]);
 }
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-if (candidateAnswers === correctAnswers) {
-  console.log("Correct!")
+console.log(`1. Your answer was ${candidateAnswers[0]}. The correct answer is ${correctAnswers[0]}.`)
+if (candidateAnswers[0] == correctAnswers[0]) {
+  console.log("Correct!");
 } else {
   console.log("Wrong!");
 }
-
+console.log(`2. Your answer was ${candidateAnswers[1]}. The correct answer is ${correctAnswers[1]}.`)
+if (candidateAnswers[1] == correctAnswers[1]) {
+  console.log("Correct!");
+} else {
+  console.log("Wrong!");
+}
+console.log(`3. Your answer was ${candidateAnswers[2]}. The correct answer is ${correctAnswers[2]}.`)
+if (candidateAnswers[2] == correctAnswers[2]) {
+  console.log("Correct!");
+} else {
+  console.log("Wrong!");
+}
+console.log(`4. Your answer was ${candidateAnswers[3]}. The correct answer is ${correctAnswers[3]}.`)
+if (candidateAnswers[3] == correctAnswers[3]) {
+  console.log("Correct!");
+} else {
+  console.log("Wrong!");
+}
+console.log(`5. Your answer was ${candidateAnswers[4]}. The correct answer is ${correctAnswers[4]}.`)
+if (candidateAnswers[4] == correctAnswers[4]) {
+  console.log("Correct!");
+} else {
+  console.log("Wrong!");
+}
 
   let grade;  //TODO 3.2 use this variable to calculate the candidates score.
 
@@ -51,7 +75,11 @@ function runProgram() {
   // TODO 1.1c: Greet candidate using their name //
    console.log("Greetings " + candidateName + "! ");
   askQuestion();
+  console.log("---")
   console.log(candidateAnswers);
+  console.log(correctAnswers);
+  // console.log(`Your answers were ${candidateAnswers}.`);
+  // console.log(`The correct answers are ${correctAnswers}.`)
   gradeQuiz(this.candidateAnswers);
 }
 
