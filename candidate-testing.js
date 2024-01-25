@@ -9,7 +9,6 @@ let question = "Who was the first American woman in space? ";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = '';
 
-
 //TODO: Variables for Part 2
 let questions = ["Who was the first American woman in space? ", "True or false: 5 kilometer == 5000 meters? ", "(5 + 3)/2 * 10 = ? ", "Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", "What is the minimum crew size for the ISS? " ];
 let correctAnswers =  ["Sally Ride", "true", "40", "Trajectory", "3" ];
@@ -31,42 +30,47 @@ function askQuestion() {
 }
 
 function gradeQuiz(candidateAnswers) {
-
+let correctCandidateAnswers = [];
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
 console.log(`1. Your answer was ${candidateAnswers[0]}. The correct answer is ${correctAnswers[0]}.`)
 if (candidateAnswers[0] == correctAnswers[0]) {
   console.log("Correct!");
-} else {
+  correctCandidateAnswers.push(1);
+}
+else {
   console.log("Wrong!");
 }
 console.log(`2. Your answer was ${candidateAnswers[1]}. The correct answer is ${correctAnswers[1]}.`)
 if (candidateAnswers[1] == correctAnswers[1]) {
   console.log("Correct!");
+  correctCandidateAnswers.push(1);
 } else {
   console.log("Wrong!");
 }
 console.log(`3. Your answer was ${candidateAnswers[2]}. The correct answer is ${correctAnswers[2]}.`)
 if (candidateAnswers[2] == correctAnswers[2]) {
   console.log("Correct!");
+  correctCandidateAnswers.push(1);
 } else {
   console.log("Wrong!");
 }
 console.log(`4. Your answer was ${candidateAnswers[3]}. The correct answer is ${correctAnswers[3]}.`)
 if (candidateAnswers[3] == correctAnswers[3]) {
   console.log("Correct!");
+  correctCandidateAnswers.push(1);
 } else {
   console.log("Wrong!");
 }
 console.log(`5. Your answer was ${candidateAnswers[4]}. The correct answer is ${correctAnswers[4]}.`)
 if (candidateAnswers[4] == correctAnswers[4]) {
   console.log("Correct!");
+  correctCandidateAnswers.push(1);
 } else {
   console.log("Wrong!");
 }
-
-  let grade;  //TODO 3.2 use this variable to calculate the candidates score.
-
-
+  let grade = '';
+  grade = ((correctCandidateAnswers.length / questions.length) * 100);  //TODO 3.2 use this variable to calculate the candidates score.
+  console.log(grade);
   return grade;
 }
 
@@ -76,8 +80,6 @@ function runProgram() {
    console.log("Greetings " + candidateName + "! ");
   askQuestion();
   console.log("---")
-  console.log(candidateAnswers);
-  console.log(correctAnswers);
   // console.log(`Your answers were ${candidateAnswers}.`);
   // console.log(`The correct answers are ${correctAnswers}.`)
   gradeQuiz(this.candidateAnswers);
